@@ -1,0 +1,34 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        The GOV.UK Prototype Kit
+        <span class="govuk-caption-xl">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      <p>This is the screen on which the trader would be selecting the country of dispatch / origin.</p>
+
+      <p>After having selected the country, the system then works out if there are any conditions
+      that will influence the documentation that they need (in the licences section).</p>
+
+      <p>If there are any conditional pieces of logic, then the user is asked each of these questions
+      in turn, one per page, as per recommended gov.uk layout - system works out the questions and the sequence
+      in which to ask them.<p>
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "veterinary_control"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
