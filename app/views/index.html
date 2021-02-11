@@ -9,25 +9,39 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>This is the screen on which the trader would be selecting the country of dispatch / origin.</p>
+      <h1 class="govuk-heading-xl">Check how to import or export goods into or out of the UK</h1>
+            <h1 class="govuk-heading-m">When to use the service</h1>
+            <p>You can use this service to check what businesses need to have in place at any time during the import or export process, including:</p>
+            <ul>
+              <li><p>before the goods have been bought</p></li>
+              <li><p>declaring your goods and moving them across the UK border</p></li>
+              <li><p>after the goods have arrived </p></li>
+            </ul>
+            <br>
 
-      <p>After having selected the country, the system then works out if there are any conditions
-      that will influence the documentation that they need (in the licences section).</p>
+            <h1 class="govuk-heading-m">What the service does</h1>
+            <p>The service will show you the steps you need to take based on where the goods are from and what their commodity code is.</p>
+            <p>If you don’t know the commodity code for your goods, you’ll be able to search for it in the service.</p>
+            <p>The steps shown include:</p>
+            <ul>
+              <li><p>registering your business for trading</p></li>
+              <li><p>licences and certificates required for your goods</p></li>
+              <li><p>calculating taxes for your goods and any reduction in duties</p></li>
+              <li><p>declarations and notifications your goods need to clear the UK Border</p></li>
+              <li><p>how to reclaim VAT</p></li>
+              <li><p>which invoices and records to keep</p></li>
+            </ul>
+            <br>
 
-      <p>If there are any conditional pieces of logic, then the user is asked each of these questions
-      in turn, one per page, as per recommended gov.uk layout - system works out the questions and the sequence
-      in which to ask them.<p>
+            <p>The steps you need to take will be tailored based on the information you provide, such as where the goods are from and the commodity code of the goods. </p>
+            <br>
 
-
-
-      {{ govukButton({
-        text: "Continue",
-        href: "veterinary_control"
-      }) }}
+            <a href="type-of-trade" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" data-module="govuk-button">
+              Start now
+              <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+              </svg>
+            </a>
     </div>
   </div>
 

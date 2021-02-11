@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukBackLink({
+        text: "Back",
+        href: "/"
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Do you want to import or export goods?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "import",
+            text: "Import (bringing goods into the UK)"
+          },
+          {
+            value: "export",
+            text: "Export (sending goods from the UK)"
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "date"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
