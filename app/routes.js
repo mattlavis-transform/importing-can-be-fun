@@ -36,13 +36,21 @@ router.post('/05-origin-handler', function (req, res) {
     var origin = req.session.data["origin"];
     if (destination == "XI") {
         if (origin == "GB") {
-            res.render('06-message-gb-to-ni');
+            res.redirect('/06-message-gb-to-ni');
         } else if (origin == "EU") {
-            res.render('06-message-eu-to-ni');
+            res.redirect('/06-message-eu-to-ni');
+        } else {
+            res.redirect('/who-are-you');
         }
     } else {
         res.render('/');
     }
 });
+
+router.get(['/who-are-you'], function (req, res) {
+    res.render('07-who-are-you');
+});
+
+
 
 module.exports = router
