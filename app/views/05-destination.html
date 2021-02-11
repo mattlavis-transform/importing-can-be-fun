@@ -12,7 +12,7 @@
     }) }}
   {{ govukBackLink({
   text: "Back",
-  href: "/type-of-trade"
+  href: "/date"
 }) }}
 {% endblock %}
 {% block content %}
@@ -21,33 +21,35 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-    <form action="/data-handler" method="get">
+    <form action="/origin" method="post">
       {{ govukRadios({
             idPrefix: "destination",
             name: "destination",
             fieldset: {
             legend: {
-            text: "Are you the importer and/or the person buying the goods?",
+            text: "Which part of the UK are you importing into?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
             }
             },
+            hint: {
+            text: "The import controls applicable to your trade may be dependent on the part of the UK to which you are importing."
+            },
             items: [
             {
-            value: "yes",
-            text: "Yes"
+            value: "GB",
+            text: "England, Scotland or Wales (GB)"
             },
             {
-            value: "no",
-            text: "No, I am the importer’s representative (for example, an agent or freight forwarder) "
+            value: "XI",
+            text: "Northern Ireland"
 
             }
             ]
           }) }}
 
       {{ govukButton({
-        text: "Continue",
-        xhref: "veterinary_control"
+        text: "Continue"
       }) }}
     </form>
   </div>

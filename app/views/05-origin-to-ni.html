@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+    <link href="/public/stylesheets/location-autocomplete.min.css" media="all" rel="stylesheet" type="text/css" />
     <script src="/public/javascripts/location-autocomplete.min.js"></script>
     {{ govukPhaseBanner({
       tag: {
@@ -24,7 +25,7 @@
             <form action="/05-origin-handler" method="post">
                   {% set otherHtml %}
                     <label class="govuk-label" for="origin">Select a country of origin</label>
-                    <select id="origin" class="autocomplete__input autocomplete__input--default {{ error_class }}" name="origin">
+                    <select id="origin-specific" class="autocomplete__input autocomplete__input--default {{ error_class }}" name="origin-specific">
                         <option value="" disabled="" selected="">Pick an option</option>
                         <option value="AF">Afghanistan</option>
                         <option value="AL">Albania</option>
@@ -332,8 +333,6 @@
                       ]
                     }) }}
 
-
-                    
                     {{ govukButton({
                       text: "Continue"
                     }) }}

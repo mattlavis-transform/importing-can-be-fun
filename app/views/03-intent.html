@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What are you doing with the goods?
+{% endblock %}
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+      tag: {
+        text: "beta"
+      },
+      html: 'This is a Beta service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+    }) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "/who-are-you"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="/data-handler" method="get">
+      {{ govukRadios({
+            idPrefix: "destination",
+            name: "destination",
+            fieldset: {
+            legend: {
+            text: "What are you doing with the goods?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+            }
+            },
+            hint: {
+            text: "Select one option"
+            },
+            items: [
+            {
+              value: "business",
+              text: "I am bringing in goods to sell, process or use in my business "
+            },
+            {
+              value: "EU",
+              text: "I am bringing in goods from the EU "
+            },
+            {
+              value: "post",
+              text: " I am getting goods through the Post "
+            },
+            {
+              value: "personal",
+              text: " I am bringing in goods through my luggage for personal use "
+            },
+            {
+              value: "car",
+              text: "I am bringing in goods in my luggage, car or van to use in my business to use or sell "
+            },
+            {
+              value: "temp",
+              text: "I am bringing in goods into the UK temporarily (e.g. repair, forward to another country) "
+            },
+            {
+              value: "moving",
+              text: "I am moving to the UK with my belongings "
+            }
+            ]
+          }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/date"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

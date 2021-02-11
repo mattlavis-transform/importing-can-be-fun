@@ -6,25 +6,30 @@ router.get(['/type-of-trade'], function (req, res) {
     res.render('01-type-of-trade');
 });
 
-router.get(['/date'], function (req, res) {
-    res.render('02-date');
+router.get(['/who-are-you'], function (req, res) {
+    res.render('02-who-are-you');
 });
 
+router.get(['/intent'], function (req, res) {
+    res.render('03-intent');
+});
+
+
 router.get(['/date'], function (req, res) {
-    res.render('02-date');
+    res.render('04-date');
 });
 
 router.get(['/destination'], function (req, res) {
-    res.render('03-destination');
+    res.render('05-destination');
 });
 
 router.post('/origin', function (req, res) {
     var destination = req.session.data["destination"];
     //console.log(req.session.data["destination"]);
     if (destination == "GB") {
-        res.render('04-origin-to-gb');
+        res.render('05-origin-to-gb');
     } else {
-        res.render('04-origin-to-ni');
+        res.render('05-origin-to-ni');
     }
 });
 
@@ -40,17 +45,15 @@ router.post('/05-origin-handler', function (req, res) {
         } else if (origin == "EU") {
             res.redirect('/06-message-eu-to-ni');
         } else {
-            res.redirect('/who-are-you');
+            res.redirect('/commodity');
         }
     } else {
-        res.render('/');
+        res.redirect('/commodity');
     }
 });
 
-router.get(['/who-are-you'], function (req, res) {
-    res.render('07-who-are-you');
+router.get(['/commodity'], function (req, res) {
+    res.render('08-commodity');
 });
-
-
 
 module.exports = router
